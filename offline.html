@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A66C2">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+    <title>Social Works</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            color: #444;
+            font-family: 'Helvetica', 'Verdana', sans-serif;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            align-content: stretch;
+            align-items: stretch;
+            background: #ececec;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
+        /**
+        * Header
+        */
+
+        .header {
+            align-content: center;
+            align-items: stretch;
+            background: #0A66C2;
+            box-shadow:
+                    0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                    0 2px 9px 1px rgba(0, 0, 0, 0.12),
+                    0 4px 2px -2px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            font-size: 20px;
+            height: 56px;
+            justify-content: flex-start;
+            padding: 16px 16px 0 16px;
+            position: fixed;
+            transition: transform 0.233s cubic-bezier(0, 0, 0.21, 1) 0.1s;
+            width: 100%;
+            will-change: transform;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .header .powered-by {
+            color: white;
+            font-size: 0.6em;
+            text-decoration: none;
+        }
+
+        .main {
+            flex: 1;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding-top: 60px;
+        }
+
+        .offline-card {
+            background: #fff;
+            border-radius: 2px;
+            box-shadow:
+                    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            margin: 16px;
+            padding: 16px;
+            position: relative;
+            text-align: center;
+        }
+
+        #card_content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .planned-social-works {
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            margin-bottom: 5px;
+        }
+
+        .planned-social-works__card {
+            display: flex;
+            align-items: center;
+            flex: 0 0 90px;
+            background-color: #F8F8FA;
+            margin: 7px 1px;
+            border-radius: 5px;
+            padding: 10px 10px;
+            box-shadow: 0px 0px 5px 1px #c7c1c7;
+        }
+
+        .planned-social-work__image {
+            width: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            height: 60px;
+        }
+
+        .planned-social-work__image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .planned-social-work__image i {
+            font-size: 200px;
+        }
+
+        .planned-social-work__description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            flex: 3 3 60%;
+            padding: 10px;
+        }
+
+        .planned-social-work__description > span {
+            letter-spacing: 1px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #404040;
+        }
+
+        .planned-social-work__date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid black;
+            color: #a9a29f;
+            width: 24%;
+            padding-left: 10px;
+        }
+
+        .planned-social-work__date span {
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .planned-social-work__date span:first-child {
+            font-size: 30px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .planned-social-work__date span:nth-of-type(2) {
+            font-size: 12px;
+        }
+
+        .pinned-social-work__itenary {
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        .pinned-social-work__itenary span:nth-of-type(2),
+        .pinned-social-work__itenary i {
+            margin: 0;
+            color: #a9a29f;
+        }
+
+        .card_empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>
+        Social Work
+    </h1>
+</header>
+<main class="main">
+    <div class="offline-card">
+        <img src="images/offline.svg" alt="" width="100" height="100" class="offline">
+        <div>
+            Parece que você está sem conexão. Para acessar este aplicativo é necessário estar conectado.
+        </div>
+        <hr>
+        <h5>Você está offline</h5>
+
+        <div class="planned-social-works__card card_empty">
+            <div class="planned-social-work__description">
+                <span><i class="fa fa-frown"></i>Nenhum usuário</span>
+            </div>
+        </div>
+
+        <div class="planned-social-works__card card_loading">
+            <div class="planned-social-work__image">
+                <img src="images/loading.gif" alt="carregando" />
+            </div>
+            <div class="planned-social-work__description">
+                <span>Aguardando conexão...</span>
+            </div>
+        </div>
+
+        <div id="card_content">
+        </div>
+    </div>
+</main>
+<script>
+
+/*###########################
+Coletando postagens
+#############################*/
+
+    var ajax = new XMLHttpRequest();
+
+    // Seta tipo de requisição e URL com os parâmetros
+    ajax.open("GET", "dados.json", true);
+
+    // Envia a requisição
+    ajax.send();
+
+    // Cria um evento para receber o retorno.
+    ajax.onreadystatechange = function() {
+        // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+        if (ajax.readyState == 4 && ajax.status == 200) {
+
+            // Retorno do Ajax
+            var data = ajax.responseText;
+            var data_json = JSON.parse(data);
+
+            if (data_json.length == 0){
+                document.getElementsByClassName('card_loading')[0].style.display = 'none';
+                document.getElementsByClassName('card_empty')[0].style.display = 'block';
+            } else {
+                document.getElementsByClassName('card_loading')[0].style.display = 'none';
+                var container_social_works = document.getElementById('card_content');
+                container_social_works.innerHTML = "";
+
+                var html_social_works = "";
+                for (var i = 0; i < data_json.length; i++) {
+                    html_social_works += template_card(data_json[i]['nome'], data_json[i]['url'], data_json[i]['qnt_conexoes'], data_json[i]['profissao']);
+                }
+
+                container_social_works.innerHTML = html_social_works;
+            }
+        }
+    }
+
+    var template_card = function(nome, url, qnt_conexoes, profissao) {
+    return  ' <a href="http://www.linkedin.com" target="_blank" style="text-decoration: none;" rel="noreferrer>' +
+            '   <div class="planned-social-works__card">\n' +
+            '       <div class="planned-social-work__image">\n' +
+            '           <img src="' + url + '" alt="Imagem da usuário">\n' +
+            '       </div>\n' +
+            '       <div class="planned-social-work__description">\n' +
+            '           <span><b>' + nome + '</b></span>\n' +
+            '           <div class="pinned-social-work__itenary">\n' +
+            '               <span>' + profissao + '</span>\n' +
+            '           </div>\n' +
+            '       </div>\n' +
+            '       <div class="planned-social-work__date">\n' +
+            '           <span>' + qnt_conexoes + '</span>\n' +
+            '           <span>Conexões</span>\n' +
+            '       </div>\n' +
+            '   </div>' +
+            ' </a>';
+}
+</script>
+</body>
+</html>

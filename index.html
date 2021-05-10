@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#0A66C2">
+
+    <!-- Bootstrap CSS and Others CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="images/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+
+    <!-- iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Social Work">
+    <link rel="apple-touch-icon" href="images/icons/128.png">
+
+    <meta name="description" content="Pequena descrição para resolver o notificação de SEO da auditoria">
+    <title>Social Work</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="bar"></div>
+        <div class="header">
+            <div class="details">
+                <h3>Rodrigo Batista</h3>
+                <span><h56>Professor</h6></span>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="profile-card">
+                <div class="profile-card__image">
+                    <img src="images/avatars/avatar-1.png" alt="" />
+                </div>
+                <div class="profile-details">
+                    <div class="numbers">
+                        <div class="follower">
+                            <div>763</div>
+                            <div>Seguidores</div>
+                        </div>
+                        <div class="travels">
+                            <div>26</div>
+                            <div>Conexões</div>
+                        </div>
+                    </div>
+                    <button id="butInstall" hidden>Instalar</button>
+                    <button id="butPush" hidden>Notification</button>
+                    <button data-toggle="modal" data-target="#mapa">Minha Localização</button>
+                </div>
+            </div>
+
+            <label class="pinned-social-work__label"><b>Minhas Conexões</b></label>
+            <div class="planned-social-works">
+                <div class="planned-social-works__card card_empty">
+                    <div class="planned-social-work__description">
+                        <span><i class="fa fa-frown"></i>Nenhuma Conexão Encontrada</span>
+                    </div>
+                </div>
+                <div class="planned-social-works__card card_loading">
+                    <div class="planned-social-work__image">
+                        <img src="images/loading.gif" alt="some image" />
+                    </div>
+                    <div class="planned-social-work__description">
+                        <span>Aguardando conexões...</span>
+                    </div>
+                </div>
+                <div id="card_content">
+                    <!-- Preenchimento dinâmico -->
+                </div>
+            </div>
+
+            <div class="planned-social-works" hidden>
+                <div class="planned-social-works__card">
+                    <div class="planned-social-work__description">
+                        <span style="font-size:12px; word-break: break-all;" id="endpoint_push">Aguardando endpoint de notificação</span>
+                    </div>
+                </div>
+            </div>
+            <div class="planned-social-works" hidden>
+                <div class="planned-social-works__card">
+                    <div class="planned-social-work__description">
+                        <button id="butSend" class="btn btn-block btn-primary">Enviar em Background</button>
+                        <span style="font-size:12px; word-break: break-all;" id="send_msg">...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="mapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 100%; height: 150px; margin: 2%;">
+            <div class="modal-content" style="min-height: 50%;">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Minha Localização</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body" style="height: 100%; text-align: center;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120048.47145892047!2d-44.034089490282874!3d-19.902702597327412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690cacacf2c33%3A0x5b35795e3ad23997!2sBelo%20Horizonte%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1620605709068!5m2!1spt-BR!2sbr"
+                     style="border: 0;" allowfullscreen="" loading="lazy" width="600" height="450"></iframe>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+
+<!--Registrando o Service-worker -->
+<script>
+    let swRegistration = null;
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+                .then((reg) => {
+                    console.log('Service worker registrado com sucesso.', reg);
+                    swRegistration = reg;
+                    initialiseUI();
+                });
+        });
+    }
+</script>
+
+</body>
+</html>

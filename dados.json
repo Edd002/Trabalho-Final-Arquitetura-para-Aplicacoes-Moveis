@@ -1,0 +1,56 @@
+[
+  {
+    "nome": "Roberta Almeida",
+    "url": "images/avatars/avatar-2.png",
+    "qnt_conexoes" : 450,
+    "profissao" :"Analista de Sistemas"
+  },
+  {
+    "nome": "Tiago Gonçalves",
+    "url": "images/avatars/avatar-3.png",
+    "qnt_conexoes": 543,
+    "profissao": "Projetista Júnior"
+  },
+  {
+    "nome": "Vinícius Ricardo",
+    "url": "images/avatars/avatar-4.png",
+    "qnt_conexoes": 925,
+    "profissao": "Arquiteto de Software"
+  },
+  {
+    "nome": "Carla Alberta",
+    "url": "images/avatars/avatar-5.png",
+    "qnt_conexoes": 714,
+    "profissao": "Business Analytics"
+  },
+  {
+    "nome": "Alan Fagundes",
+    "url": "images/avatars/avatar-6.png",
+    "qnt_conexoes": 1023,
+    "profissao": "Desenvolvedor Pleno II"
+  },
+  {
+    "nome": "Renata Simões",
+    "url": "images/avatars/avatar-7.png",
+    "qnt_conexoes": 213,
+    "profissao": "Engenheiro Elétrico"
+  },
+  {
+    "nome": "Bábara Monteiro",
+    "url": "images/avatars/avatar-8.png",
+    "qnt_conexoes": 698,
+    "profissao": "Psicológo"
+  },
+  {
+    "nome": "Fernando Franco",
+    "url": "images/avatars/avatar-9.png",
+    "qnt_conexoes": 135,
+    "profissao": "Gerente de Projetos"
+  },
+  {
+    "nome": "João da Silva",
+    "url": "images/avatars/avatar-10.png",
+    "qnt_conexoes": 56,
+    "profissao": "Engenheiro de Software"
+  }
+]
