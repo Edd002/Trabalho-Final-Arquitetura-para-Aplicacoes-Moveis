@@ -59,23 +59,19 @@ ajax.onreadystatechange = function() {
 }
 
 var template_card = function(nome, url, qnt_conexoes, profissao) {
-    return  ' <a href="http://www.linkedin.com" target="_blank" style="text-decoration: none;" rel="noreferrer>' +
-            '   <div class="planned-social-works__card">\n' +
-            '       <div class="planned-social-work__image">\n' +
-            '           <img src="' + url + '" alt="Imagem do usuário">\n' +
-            '       </div>\n' +
-            '       <div class="planned-social-work__description">\n' +
-            '           <span><b>' + nome + '</b></span>\n' +
-            '           <div class="pinned-social-work__itenary">\n' +
-            '               <span>' + profissao + '</span>\n' +
-            '           </div>\n' +
-            '       </div>\n' +
-            '       <div class="planned-social-work__date">\n' +
-            '           <span>' + qnt_conexoes + '</span>\n' +
-            '           <span>Conexões</span>\n' +
-            '       </div>\n' +
-            '   </div>' +
-            ' </a>';
+    return  '<div class="card" >' +
+            '    <img src="' + url + '" alt="Imagem da usuário" height="100">' +
+            '    <div class="card-body">' +
+            '        <h5 class="card-title"><b>' + nome + '</b></h5>' +
+            '        <p class="card-text">' + profissao + '</p>' +
+            '    </div>' +
+            '    <ul class="list-group list-group-flush">' +
+            '        <li class="list-group-item"><h4>Conexões: ' + qnt_conexoes + '</h4></li>' +
+            '    </ul>' +
+            '    <div class="card-body">' +
+            '        <a href="https://www.linkedin.com/" class="card-link"><h4>LinkedIn</h4></a>' +
+            '    </div>' +
+            '</div>';
 }
 
 

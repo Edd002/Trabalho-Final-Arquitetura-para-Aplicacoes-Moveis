@@ -259,32 +259,6 @@ body {
     color: #404040;
 }
 
-.planned-social-work__date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid black;
-    color: #a9a29f;
-    width: 24%;
-    padding-left: 10px;
-}
-
-.planned-social-work__date span {
-    display: inline-block;
-    text-transform: uppercase;
-}
-
-.planned-social-work__date span:first-child {
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-.planned-social-work__date span:nth-of-type(2) {
-    font-size: 12px;
-}
-
 .pinned-social-work__itenary {
     margin-top: 6px;
     text-transform: uppercase;
